@@ -1,0 +1,70 @@
+<!-- section Subscribe -->
+<section class="subscribe-section" id="subscribe">
+  <div class="container subscribe-content">
+    <h1 class="subscribe-title">EXPLORE OUR NEW CHOCOLATE FIRST</h1>
+    <p class="subscribe-text">
+      From the velvety texture to the rich and complex flavor, our New Chocolate
+      is a true indulgence that will leave you craving more. Made with only the
+      finest ingredients and handcrafted with the utmost care, each piece is a
+      work of art that is sure to please.
+    </p>
+    <button class="subscribe-btn js-open-modal" data-modal="3" type="button">
+      Subscribe
+    </button>
+  </div>
+</section>
+<div class="subscribe-modal modal" data-modal="3">
+  <button class="subscribe-btn-modal js-modal-close" type="button">
+    <svg class="subscribe-icon" width="24" height="24">
+      <use href="./img/sprite.svg#icon-close-1"></use>
+    </svg>
+  </button>
+  <div class="subscribe-modal-img">
+    <picture class="subscribe-modal-picture">
+      <source
+        srcset="
+          ./img/subscribe-img/subscribe-modal-mobile-min.jpg    1x,
+          ./img/subscribe-img/subscribe-modal-mobile-2x-min.jpg 2x
+        "
+        media="(max-width: 767px)"
+      />
+      <source
+        srcset="
+          ./img/subscribe-img/subscribe-modal-tablet-min.jpg    1x,
+          ./img/subscribe-img/subscribe-modal-tablet-2x-min.jpg 2x
+        "
+        media="(min-width: 768px)"
+      />
+      <img
+        src="./img/subscribe-img/subscribe-modal-mobile-min.jpg"
+        alt="new-chocolate"
+        height="169"
+        class="subscribe-modal-img"
+      />
+    </picture>
+  </div>
+  <div class="subscribe-modal-form-content">
+    <p class="subscribe-modal-title">
+      Explore our <br />
+      <span class="subscribe-modal-logo">new chocolate </span> first!
+    </p>
+    <form action="#" class="contact-form">
+      <div class="modal-form-content">
+        <label class="input-title" for="email"></label>
+        <span class="subscribe-modal-input-wrapper">
+          <input
+            type="email"
+            class="subscribe-modal-input"
+            id="email"
+            name="Email"
+            required
+            placeholder="Enter your email"
+          />
+        </span>
+        <button type="submit" class="subscribe-modal-btn-submit btn">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
