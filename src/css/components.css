@@ -126,7 +126,7 @@
   position: absolute;
   top: 0;
   background-color: var(--light-color);
-  overflow: hidden;
+  overflow: scroll;
   padding: 28px;
   border-radius: 15px;
   transform: rotateY(180deg);
