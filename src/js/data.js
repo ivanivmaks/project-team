@@ -7,19 +7,21 @@ const firebaseConfig = {
   appId: '1:828835118965:web:e734c8b26ed4c1807f5d3c',
   measurementId: 'G-81DT6E36X4',
 };
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-var nameInput = document.getElementById('personal-name');
-var surnameInput = document.getElementById('personal-surname');
-var emailInput = document.getElementById('user_mail');
-var phoneInput = document.getElementById('user_phone');
-var cardInput = document.getElementById('user_card');
-var commentInput = document.getElementById('user_comment');
+const nameInput = document.getElementById('personal-name');
+const surnameInput = document.getElementById('personal-surname');
+const emailInput = document.getElementsByClassName('hero-modal__input-3')[0];
+const phoneInput = document.getElementsByClassName('hero-modal__input-tel')[0];
+const cardInput = document.getElementsByClassName('hero-modal__input-5')[0];
+const commentInput = document.getElementsByClassName('hero-modal__input-6')[0];
+
+console.log('fsfv');
 
 document
-  .getElementById('hero-modal-submit')
-  .addEventListener('click', function (event) {
+  .getElementById('hero-modal__form')
+  .addEventListener('submit', function (event) {
     event.preventDefault(); // Зупинка стандартної поведінки форми
 
     // Отримання значень з полів форми
@@ -40,15 +42,23 @@ document
       comment: comment,
     };
 
-    // Надсилання даних до бази даних
-    var newEntryRef = database.ref().push();
-    newEntryRef.set(data);
+    console.log(data);
 
-    // Очищення полів форми
-    nameInput.value = '';
-    surnameInput.value = '';
-    emailInput.value = '';
-    phoneInput.value = '';
-    cardInput.value = '';
-    commentInput.value = '';
+    // Надсилання даних до бази даних
+    const newEntryRef = database.ref().push();
+    newEntryRef
+      .set(data)
+      .then(() => {
+        console.log('Дані збережено');
+        // Очистка полей формы
+        nameInput.value = '';
+        surnameInput.value = '';
+        emailInput.value = '';
+        phoneInput.value = '';
+        cardInput.value = '';
+        commentInput.value = '';
+      })
+      .catch(error => {
+        console.error('Помилка', error);
+      });
   });
