@@ -3,4 +3,3 @@ import './js/reviews-modal.js';
 import './js/hero-modal.js';
 import './js/sellers-modal.js';
 import './js/mobile-menu.js';
-import './js/data.js';
